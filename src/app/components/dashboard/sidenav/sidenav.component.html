@@ -1,0 +1,109 @@
+<!-- sidebar -->
+<div class="col-smm-2 no-padding hidden-md-down">
+  <div class="sidebar desktop-sidebar">
+    <div class="list has-child">
+      <h5>
+        <img src="../../../../assets/admin-images/nav-profile.png" alt="Agora Monitor">
+        <span>PROFILE</span>
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </h5>
+      <ul class="list-unstyled">
+        <li>
+          <a [routerLink]="['/dashboard/my-posts']" [routerLinkActive]="['active']">My posts</a>
+        </li>
+        <li>
+          <a [routerLink]="['/dashboard/top-posts']" [routerLinkActive]="['active']">Top posts</a>
+        </li>
+        <li>
+          <a [routerLink]="['/dashboard/my-likes']" [routerLinkActive]="['active']">My Likes</a>
+        </li>
+        <li>
+           <a [routerLink]="['/dashboard/followers']" [routerLinkActive]="['active']">Followers</a>
+        </li>
+        <li>
+           <a [routerLink]="['/dashboard/followings']" [routerLinkActive]="['active']">Followings</a>
+        </li>
+      </ul>
+    </div>
+    <!-- end list -->
+    <div class="list">
+      <h5>
+        <img src="../../../../assets/admin-images/nav-dash.svg" alt="Agora Monitor">
+        <span>FEEDS</span>
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </h5>
+      <ul class="list-unstyled">
+        <li *ngFor="let feed of feeds">
+          <a class="active" [routerLink]="['/dashboard/feed/', feed.id]" [routerLinkActive]="['active']">{{feed.name}}</a>
+        </li>
+        <li>
+           <a [routerLink]="['/dashboard/manage-feeds']" [routerLinkActive]="['active']">Manage feeds</a>
+        </li>
+        <li class="has-child">
+          <span class="sub-menu-title">Hashtags</span>
+          <ul class="list-unstyled">
+            <li >
+               <a [routerLink]="['/dashboard/hashtags']" [routerLinkActive]="['active']">overview</a>
+            </li>
+            <li>
+               <a>#hashtag1</a>
+            </li>
+            <li>
+               <a>#hashtag2</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- end list -->
+    <div class="list has-child">
+      <h5>
+        <img src="../../../../assets/images/bg-graph.png" alt="Agora Monitor">
+        <span>ANALYTICS</span>
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </h5>
+      <ul class="list-unstyled">
+        <li>
+          <a class="active">Overview</a>
+        </li>
+        <li>
+           <a>Community</a>
+        </li>
+        <li>
+           <a>Engagment</a>
+        </li>
+      <li class="has-child">
+        <span class="sub-menu-title">Competitors</span>
+        <ul class="list-unstyled">
+          <li>
+             <a [routerLink]="['/dashboard/analytics-competitors']" [routerLinkActive]="['active']">overview</a>
+          </li>
+          <li  *ngFor="let comp of competitors">
+            <a [routerLink]="['/dashboard/analytics-competitor/',comp.id]" [routerLinkActive]="['active']">
+              <span class="hashtag-name">@{{comp.nickname}}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-child">
+        <span class="sub-menu-title">Hashtags</span>
+        <ul class="list-unstyled">
+          <li>
+             <a [routerLink]="['/dashboard/hashtags']" [routerLinkActive]="['active']">overview</a>
+          </li>
+          <li *ngFor="let hash of hashtags">
+            <a [routerLink]="['/dashboard/hashtag/',hash.id]" [routerLinkActive]="['active']">
+              <span class="hashtag-name">#{{hash.name}}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+  </div>
+  <!-- end sidebar -->
+</div>
+<!-- end sidebar -->

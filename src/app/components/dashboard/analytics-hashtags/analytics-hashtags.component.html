@@ -1,0 +1,175 @@
+<!-- start analytics-hashtags content -->
+<div class="analytics-hashtags page-content collapsed">
+  <div class="contaniner-fluid">
+    <div class="analytics-hashtags-header">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <label>Analytics: Hashtags:</label>
+          <h3>Overview</h3>
+        </div>
+        <div class="col-md-6 col-12 text-right">
+          <button class="agora-btn add-hashtag">
+            <img src="../../../../assets/admin-images/icon-add.svg" alt="Agora Monitor"> Add hashtag
+          </button>
+          <button class="agora-btn manage-hashtag">
+            <img src="../../../../assets/admin-images/icon-pencil.svg" alt="Agora Monitor"> Manage
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end analytics-hashtags-header -->
+    <div class="analytics-hashtags-stats">
+      <div class="row" *ngIf="hashtags">
+        <div class="col-xl-4 col-md-6 col-12" >
+          <div class="analytics-hashtags-box">
+            <h4>Media Posted</h4>
+            <ul class="list-unstyled hashtags-list">
+              <li *ngFor="let hash of hashtags">
+                <a [routerLink]="['/dashboard/hashtag/',hash.id]"><span class="hashtag-name">#{{hash.name}}</span></a>
+                <label></label>
+                <span class="hashtag-number">{{hash.total}}</span>
+              </li>
+              <li>
+                <span class="hashtag-number note">This Month</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-12" >
+          <div class="analytics-hashtags-box">
+            <h4>Photos Posted</h4>
+            <ul class="list-unstyled hashtags-list">
+              <li *ngFor="let hash of hashtags">
+                <a [routerLink]="['/dashboard/hashtag/',hash.id]"><span class="hashtag-name">#{{hash.name}}</span></a>
+                <label></label>
+                <span class="hashtag-number">{{hash.images}}</span>
+              </li>
+              <li>
+                <span class="hashtag-number note">This Month</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-12" >
+          <div class="analytics-hashtags-box">
+            <h4>Videos Posted</h4>
+            <ul class="list-unstyled hashtags-list">
+              <li *ngFor="let hash of hashtags">
+                <a [routerLink]="['/dashboard/hashtag/',hash.id]"><span class="hashtag-name">#{{hash.name}}</span></a>
+                <label></label>
+                <span class="hashtag-number">{{hash.videos}}</span>
+              </li>
+              <li>
+                <span class="hashtag-number note">This Month</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end analytics-hashtags-stats -->
+    <div class="analytics-hashtags-charts">
+      <div class="row">
+        <div class="col-lg-6 col-12">
+          <div class="chart-panel">
+            <div class="chart-panel-heading">
+              <h6>
+                <span>Followers Growth</span>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    05/09/17 - 06/09/17
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </h6>
+            </div>
+            <div class="chart-panel-body">
+              <!-- <template id="chart-template">
+                <div>
+                  <div class="charts" :id="id">
+                  </div>
+                </div>
+              </template>
+              <div id="Followers-Growth">
+                <chart id="Followers-Growth-Chart" :categories="dates" :chart-data="likes"></chart>
+              </div> -->
+            </div>
+            <!-- end chart-panel-body -->
+          </div>
+          <!-- end chart-panel -->
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="chart-panel">
+            <div class="chart-panel-heading">
+              <h6>
+                <span>Followings Growth</span>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    05/09/17 - 06/09/17
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </h6>
+            </div>
+            <div class="chart-panel-body">
+              <!-- <template id="chart-template">
+                <div>
+                  <div class="charts" :id="id">
+                  </div>
+                </div>
+              </template>
+              <div id="Followings-Growth">
+                <chart id="Followings-Growth-Chart" :categories="dates" :chart-data="likes"></chart>
+              </div> -->
+            </div>
+            <!-- end chart-panel-body -->
+          </div>
+          <!-- end chart-panel -->
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="chart-panel">
+            <div class="chart-panel-heading">
+              <h6>
+                <span>Gained & lost followers</span>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    05/09/17 - 06/09/17
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </h6>
+            </div>
+            <div class="chart-panel-body">
+              <!-- <template id="chart-template">
+                <div>
+                  <div class="charts" :id="id">
+                  </div>
+                </div>
+              </template>
+              <div id="Media-Type">
+                <pie-chart id="Media-Type-chart" :categories="dates" :chart-data="MediaType"></pie-chart>
+              </div> -->
+            </div>
+            <!-- end chart-panel-body -->
+          </div>
+          <!-- end chart-panel -->
+        </div>
+      </div>
+    </div>
+    <!-- end analytics-competitors-charts -->
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end analytics-hashtags content -->

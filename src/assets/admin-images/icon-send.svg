@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="36px" viewBox="0 0 37 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-2.4%" y="-0.8%" width="164.8%" height="102.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="M-Post-details" transform="translate(-310.000000, -814.000000)" fill-rule="nonzero" fill="#59B478">
+            <g id="Mobile/Posts-panels" transform="translate(0.000000, 80.000000)">
+                <g id="Panels" transform="translate(15.000000, 0.000000)">
+                    <g id="Mobile/Posts-panels">
+                        <g id="Post-1" filter="url(#filter-1)">
+                            <g id="Details" transform="translate(1.000000, 389.000000)">
+                                <g id="Group-2" transform="translate(9.000000, 331.000000)">
+                                    <path d="M317.434091,29.9436608 C317.415762,29.6856484 317.260672,29.4572256 317.028037,29.3458764 L291.040548,17.0740067 C290.764207,16.9386552 290.432874,16.9922328 290.214326,17.207947 C289.995789,17.4250724 289.937982,17.7549836 290.070514,18.032761 L295.698971,29.9999995 L290.070514,41.9672381 C289.937982,42.2449902 289.995789,42.5749122 290.214326,42.7920521 C290.432863,43.0077699 290.764178,43.0613439 291.040548,42.9259923 L317.028037,30.6541227 C317.297328,30.524409 317.459465,30.2410299 317.434091,29.9435092 L317.434091,29.9436608 Z M313.486158,29.2781646 L296.962086,29.2781646 L292.235972,19.2397752 L313.486158,29.2781646 Z M313.486158,30.7219139 L292.235972,40.7603033 L296.962086,30.7219139 L313.486158,30.7219139 Z" id="icon-send"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

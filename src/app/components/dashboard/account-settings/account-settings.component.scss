@@ -1,0 +1,332 @@
+$main-color: #59B478;
+.no-padding {
+    padding-right: 0;
+    padding-left: 0
+}
+
+.agorio-btn {
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    border: none;
+    outline: none;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #696969;
+    cursor: pointer;
+}
+
+.download-invoice {
+    background-color: #59B478;
+    color: #fff;
+}
+
+
+/*start page-content styles */
+
+.page-content {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 50px;
+    background-color: #F6F6F6;
+    min-height: 100vh;
+    .contaniner-fluid {
+        padding: 40px;
+    }
+    &.collapsed {
+        padding-left: 200px;
+        @media(max-width: 991px) {
+            padding-left: 0;
+        }
+    }
+    .account-settings-header {
+        color: #696969;
+        font-family: Raleway;
+        border-bottom: 1px solid #EAEAEA;
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+    .account-settings-body {
+        padding-bottom: 40px;
+        .account-settings-all-tabs {
+            margin: 30px 0;
+            .nav-tabs {
+                border-bottom: 2px solid $main-color;
+                @media(max-width: 700px) {
+                    flex-direction: column;
+                }
+                li {
+                    a {
+                        @media(max-width: 700px) {
+                            display: inline-block;
+                            border-radius: .25rem;
+                            margin-bottom: 10px;
+                        }
+                        color: #696969;
+                        font-family: Raleway;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: .5em 1.5em;
+                        &.active {
+                            background-color: $main-color;
+                            color: #fff;
+                            border: 1px solid $main-color;
+                        }
+                        &:hover {
+                            border: 1px solid $main-color;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+            .tab-content {
+                border-radius: 0 0 3px 3px;
+                background-color: #FFFFFF;
+                box-shadow: 0 -2px 0 0 #59B478, 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+                padding: 20px 40px;
+                @media(max-width: 600px) {
+                    padding:20px 25px;
+                }
+                .tab-pane {
+                    label {
+                        color: #696969;
+                        font-size: 13px;
+                        font-weight: bold
+                    }
+                    select,
+                    input[type='text'],
+                    input[type='password'],
+                    input[type='tel'] {
+                        color: #696969;
+                        font-size: 14px;
+                        font-weight: 500;
+                        display: block;
+                        padding: 6px 15px;
+                        width: 35%;
+                        border: 1px solid #D8D8D8;
+                        border-radius: 2px;
+                        background-color: #F9F9F9;
+                        @media(max-width: 700px) {
+                            width:70%;
+                        }
+                        @media(max-width:500px) {
+                            width: 100%;
+                        }
+                    }
+                    h4 {
+                        color: $main-color;
+                        ;
+                        font-size: 19px;
+                        font-weight: bold;
+                        margin-bottom: 30px;
+                    }
+                    h5 {
+                        color: #696969;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    .general-tab {
+                        .general-settings-group {
+                            padding: 30px 0;
+                            .row {
+                                >div {
+                                    margin-bottom: 25px;
+                                }
+                            }
+                            &:not(.last-group) {
+                                border-bottom: 1px solid #EAEAEA;
+                            }
+                            font-family: Raleway;
+                            select.in-grid {
+                                width: 100%;
+                            }
+                        }
+                        .general-settings-actions {
+                            margin: 40px 0 30px;
+                            button {
+                                padding: 8px 18px;
+                                font-size: 14px;
+                                @media(max-width: 500px) {
+                                    padding:8px 12px;
+                                }
+                                @media(max-width:500px) {
+                                    font-size: 13px;
+                                }
+                                &.save {
+                                    background-color: $main-color;
+                                    color: #fff;
+                                    margin-right: 15px;
+                                    @media(max-width: 500px) {
+                                        margin-right:10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .passord-tab {
+                        .password-group {
+                            margin: 18px 0;
+                            input {
+                                background-color: #FCFCFC;
+                            }
+                        }
+                        .password-settings-actions {
+                            margin: 40px 0 30px;
+                            button {
+                                padding: 8px 18px;
+                                font-size: 14px;
+                                @media(max-width: 500px) {
+                                    padding:8px 12px;
+                                }
+                                @media(max-width:500px) {
+                                    font-size: 13px;
+                                }
+                                &.save {
+                                    background-color: $main-color;
+                                    color: #fff;
+                                    margin-right: 15px;
+                                    @media(max-width: 500px) {
+                                        margin-right:10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .subscription-tab {
+                        .subscription-settings-group {
+                            padding: 30px 0;
+                            &:not(.last-group) {
+                                border-bottom: 1px solid #EAEAEA;
+                            }
+                            select {
+                                font-size: 14px;
+                                padding: 7px 15px;
+                            }
+                            h4 {
+                                font-size: 20px;
+                                margin-bottom: 20px;
+                            }
+                            button {
+                                background-color: $main-color;
+                                color: #fff;
+                                font-size: 14px;
+                                &.upgrade {
+                                    margin: 20px 0 0;
+                                }
+                                padding:8px 18px;
+                            }
+                        }
+                    }
+                    .payments-tab {
+                        table {
+                            font-family: Raleway;
+                            color: #696969;
+                            thead {
+                                td {
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    border-top: none;
+                                    border-bottom: 4px solid #EAEAEA;
+                                    &.mobile-v {
+                                        @media(max-width: 600px) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            tbody {
+                                td {
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    &.mobile-v {
+                                        @media(max-width: 600px) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                button {
+                                    background-color: $main-color;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                    .UpdateYourCard-tab {
+                        .update-card-group {
+                            margin: 20px 0;
+                            position: relative;
+                            .cvc {
+                                //margin-left:26%;
+                                position: absolute;
+                                top: 0;
+                                left: 27%;
+                                @media(max-width: 800px) {
+                                    left:52%;
+                                }
+                                @media(max-width:500px) {
+                                    left: 82%;
+                                }
+                            }
+                            input[type='tel'] {
+                                display: inline-block;
+                                width: 10%;
+                                @media(max-width: 700px) {
+                                    width:20%;
+                                }
+                                @media(max-width:500px) {
+                                    width: 23%;
+                                }
+                            }
+                            select {
+                                width: 13%;
+                                display: inline-block;
+                                @media(max-width: 800px) {
+                                    width:25%;
+                                }
+                                @media(max-width:500px) {
+                                    width: 40%;
+                                }
+                            }
+                            p {
+                                color: #696969;
+                                font-family: Raleway;
+                                font-size: 14px;
+                            }
+                            .submit {
+                                background-color: $main-color;
+                                color: #fff;
+                                padding: 9px 18px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-content {
+    padding-left: 100px;
+    transition: all 0.1s ease-in-out;
+    &.collapsed {
+        @media(max-width: 991px) {
+            padding-left: 0 !important;
+        }
+    }
+    .contaniner-fluid {
+        @media(max-width: 400px) {
+            padding:40px 15px !important;
+        }
+    }
+    .filters-area {
+        overflow: hidden !important;
+    }
+}

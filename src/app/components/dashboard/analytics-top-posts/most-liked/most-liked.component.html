@@ -1,0 +1,226 @@
+<div >
+  <div class="col-sm-12">
+    <h4 class="most-heading">
+      <img src="../../../../../assets/admin-images/icon-likes.svg" alt="Agora Monitor"> Most liked
+    </h4>
+  </div>
+<div class="row" *ngIf="topLiked">
+  <div class="col-sm-6" *ngFor="let liked of topLiked">
+      <div class="post card">
+        <a data-fancybox="most-liked-posts" [attr.data-src]="'#'+liked.id" href="javascript:;">
+          <div class="post-block">
+            <div class="post-block-hover-overlay">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            <img class="card-img-top" src="{{liked.images.low_resolution.url}}" alt="Agora Monitor">
+            <div class="overlay">
+              <img src="{{liked.user.profile_picture}}" alt="Agora Monitor">
+              <span>@{{liked.user.username}}, {{liked.diff_humans_time}}</span>
+            </div>
+          </div>
+        </a>
+        <div class="card-footer">
+          <small class="text-muted">
+            <img src="../../../../../assets/admin-images/icon-likes.svg" alt="Agora Monitor"> {{liked.formatted_likes_count}}
+            <img src="../../../../../assets/admin-images/icon-comments.svg" class="comments" alt="Agora Monitor"> {{liked.formatted_comments_count}}
+          </small>
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+        </div>
+      </div>
+      <br>
+      <!-- end post -->
+      <!-- start modal media for this object -->
+      <div class="media-modal-wrapper" style="display: none;" id="{{liked.id}}">
+        <div class="media-modal-container">
+          <div class="contaniner-fluid">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="media-modal-image-panel">
+                  <div class="media-modal-image-panel-heading">
+                    <img class="user-img" src="{{liked.user.profile_picture}}" alt="Agora Monitor">
+                    <label>
+                      <span class="username">@{{liked.user.username}}, </span>
+                      <span>{{liked.diff_humans_time}}</span>
+                    </label>
+                    <div class="comments-likes-stats">
+                      <img src="../../../../../assets/admin-images/icon-likes.svg" alt="Agora Monitor">
+                      <span>{{liked.formatted_likes_count}}</span>
+                      <img src="../../../../../assets/admin-images/icon-comments.svg" alt="Agora Monitor">
+                      <span>{{liked.formatted_comments_count}}</span>
+                    </div>
+                  </div>
+                  <div class="media-modal-image-panel-body">
+                    <img src="{{liked.images.standard_resolution.url}}" alt="Agora Monitor">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="media-modal-caption-comments-panel">
+                  <div class="media-modal-caption">
+                    <h6 class="modal-heading">Caption:</h6>
+                    <p class="modal-paragraph">
+                      {{liked.caption}}
+                    </p>
+                    <div class="tags">
+                      <span>{{liked.tags}}</span>
+                    </div>
+                  </div>
+                  <div class="media-modal-comments">
+                    <h6 class="modal-heading">Comments:</h6>
+                    <button class="agorio-btn loadComments" *ngIf="!isCommentsLoaded"  (click)="loadComments(liked.id)">
+                      <img src="../../../../../assets/admin-images/icon-comments-light.svg" alt="Agora Monitor"> Load comments
+                      <i class="fa fa-spinner fa-spin" *ngIf="isCommentsLoading"></i>
+                    </button>
+                    <div *ngIf="errorMsg" class="text-danger">{{errorMsg}}</div>
+                    <div class="err-msgs" *ngIf="errorMsg">
+                      <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsg | objectKeys">
+                        {{errorMsg[err][0]}}
+                      </span>
+                    </div>
+                    <ul class="list-unstyled comments-list" *ngIf="isCommentsLoaded">
+                      <li class="media" *ngFor="let comment of comments">
+                        <img class="d-flex mr-3 user-img" src="{{comment.from.profile_picture}}" alt="Agora Monitor">
+                        <div class="media-body">
+                          <div class="username-comment">
+                            <h5 class="mt-0 mb-1">{{comment.from.username}}</h5>
+                            <p class="modal-paragraph">{{comment.text}}</p>
+                          </div>
+                          <div class="comment-time-reply">
+                            <label>{{comment.created_time}}</label>
+                            <img src="../../../../../assets/admin-images/icon-reply.svg" alt="Agora Monitor">
+                          </div>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <!-- end media-modal-comments -->
+                  <div class="media-modal-typing-area">
+                    <input type="text" placeholder="Enter your comment...">
+                    <img src="../../../../../assets/admin-images/icon-send.svg" alt="Agora Monitor">
+                  </div>
+                  <!-- end media-modal-typing-area -->
+                </div>
+                <!-- end media-modal-caption-comments-panel -->
+              </div>
+            </div>
+          </div>
+          <!-- end container-fluid -->
+        </div>
+        <!-- end media-modal-container -->
+      </div>
+      <!-- end media-modal-wrapper -->
+    </div>
+  </div>
+</div>
+    
+    <!-- <div class="col-sm-6">
+      <div class="post card video-post">
+        <a data-fancybox="most-liked-posts" data-src="#LS" href="javascript:;">
+          <div class="post-block">
+            <img class="card-img-top" src="../../../../../assets/admin-images/LS.jpg" alt="Agora Monitor">
+            <div class="overlay">
+              <img src="../../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+              <span>@teslamotors, 7 hours ago</span>
+            </div>
+          </div>
+        </a>
+        <div class="card-footer">
+          <small class="text-muted">
+            <img src="../../../../../assets/admin-images/icon-likes.svg" alt="Agora Monitor"> 766,832
+            <img src="../../../../../assets/admin-images/icon-comments.svg" class="comments" alt="Agora Monitor"> 782
+          </small>
+          <i class="fa fa-video-camera" aria-hidden="true"></i>
+        </div>
+      </div> -->
+      <!-- end post 
+      
+      <div class="media-modal-wrapper" style="display: none;" id="LS">
+        <div class="media-modal-container">
+          <div class="contaniner-fluid">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="media-modal-image-panel">
+                  <div class="media-modal-image-panel-heading">
+                    <img class="user-img" src="../../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+                    <label>
+                      <span class="username">@alexmansour, </span>
+                      <span>7 hours ago</span>
+                    </label>
+                    <div class="comments-likes-stats">
+                      <img src="../../../../../assets/admin-images/icon-likes.svg" alt="Agora Monitor">
+                      <span>766,832</span>
+                      <img src="../../../../../assets/admin-images/icon-comments.svg" alt="Agora Monitor">
+                      <span>782</span>
+                    </div>
+                  </div>
+                  <div class="media-modal-image-panel-body">
+                    
+                    <video controls width="100%" height="450px">
+                      <source src="https://scontent.cdninstagram.com/t50.2886-16/22660033_136584676991475_1267288310376562688_n.mp4" type="video/mp4"> Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="media-modal-caption-comments-panel">
+                  <div class="media-modal-caption">
+                    <h6 class="modal-heading">Caption:</h6>
+                    <p class="modal-paragraph">Discover some handy tricks that will make grouping + rotating in #SketchApp even easier— link in bio
+                      💎 ⬆️
+                    </p>
+                    <div class="tags">
+                      <span>#beautiful</span>
+                    </div>
+                  </div>
+                  <div class="media-modal-comments">
+                    <h6 class="modal-heading">Comments:</h6>
+                    <ul class="list-unstyled">
+                      <li class="media">
+                        <img class="d-flex mr-3 user-img" src="../../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+                        <div class="media-body">
+                          <div class="username-comment">
+                            <h5 class="mt-0 mb-1">kaupo_saarmann</h5>
+                            <p class="modal-paragraph">Pressure is where amazing happens</p>
+                          </div>
+                          <div class="comment-time-reply">
+                            <label>4 hours ago</label>
+                            <img src="../../../../../assets/admin-images/icon-reply.svg" alt="Agora Monitor">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="media">
+                        <img class="d-flex mr-3 user-img" src="../../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+                        <div class="media-body">
+                          <div class="username-comment">
+                            <h5 class="mt-0 mb-1">kaupo_saarmann</h5>
+                            <p class="modal-paragraph">Pressure is where amazing happens</p>
+                          </div>
+                          <div class="comment-time-reply">
+                            <label>4 hours ago</label>
+                            <img src="../../../../../assets/admin-images/icon-reply.svg" alt="Agora Monitor">
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                 
+                  <div class="media-modal-typing-area">
+                    <input type="text" placeholder="Enter your comment...">
+                    <img src="../../../../../assets/admin-images/icon-send.svg" alt="Agora Monitor">
+                  </div>
+                 
+                </div>
+               
+              </div>
+            </div>
+          </div>
+   
+        </div>
+   
+      </div>
+     
+    </div>
+  </div>
+ 
+</div>-->

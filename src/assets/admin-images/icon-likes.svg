@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="M-Analytics:-Top-posts" transform="translate(-15.000000, -190.000000)" fill-rule="nonzero" fill="#59B478">
+            <g id="heading" transform="translate(15.000000, 188.000000)">
+                <path d="M17.4736712,4.67526517 C16.8907402,3.61869242 13.236299,0.0806439911 8.99994358,5.20304455 C4.55105861,0.0806439911 1.10813009,3.61869242 0.526215931,4.67526517 C-0.533381358,6.62896147 0.102173638,9.58675678 1.58581322,11.0126737 L9.00096047,18.406655 L16.4161077,11.0126737 C17.8977389,9.58675678 18.5332939,6.62997546 17.4737221,4.67526517 L17.4736712,4.67526517 Z" id="icon-likes"></path>
+            </g>
+        </g>
+    </g>
+</svg>

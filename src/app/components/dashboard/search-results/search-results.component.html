@@ -1,0 +1,70 @@
+<!-- start search-results content -->
+<div class="search-results page-content collapsed">
+  <div class="contaniner-fluid">
+    <div class="search-results-header">
+      <div class="row">
+        <div class="col-sm-6">
+          <label>Search results for:</label>
+          <h3>{{q}}</h3>
+        </div>
+      </div>
+    </div>
+    <!-- end search-results-header -->
+    <div class="search-results-body">
+      <div class="row">
+        <div class="col-xl-6 col-12">
+          <div class="users search-results-section">
+            <h4>
+              <img src="../../../../assets/admin-images/icon-account-green.svg" alt="Agora Monitor">
+              <span>Users</span>
+            </h4>
+            <div class="search-results-boxs">
+              <div class="row">
+                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-6" *ngFor="let user of users">
+                  <div class="search-results-box" id="user.id">
+                    <img src="{{user.image}}" alt="Agora Monitor">
+                    <h6>{{user.text}}</h6>
+                    <label>@{{user.text}}</label>
+                  </div>
+                </div>
+                <h5 *ngIf="users?.length === 0" class="text-danger text-center">{{noUsersResults}}</h5>
+                <div class="col-sm-12 show-more-section hidden-md-up">
+                  <button class="agorio-btn">
+                    <img src="../../../../assets/admin-images/icon-view-light.svg" alt="Agora Monitor"> Show more
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- end search-results-boxs -->
+          </div>
+          <!-- end users -->
+        </div>
+        <div class="col-xl-6 col-12">
+          <div class="hashatags search-results-section">
+            <h4>
+              <img src="../../../../assets/admin-images/icon-hashtag.svg" alt="Agora Monitor">
+              <span>Hashtags</span>
+            </h4>
+            <div class="search-results-boxs">
+              <div class="row">
+                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-6" *ngFor="let tag of tags">
+                  <div class="search-results-box hashtag-box" id="tag.id">
+                    <h6>{{tag.id}}</h6>
+                    <label class="hashtag-label">{{tag.text}}</label>
+                    <button class="agorio-btn">Add to my feed</button>
+                  </div>
+                </div>
+                <h5 *ngIf="!tags" class="text-danger text-center">{{noTagsResults}}</h5>
+              </div>
+            </div>
+            <!-- end search-results-boxs -->
+          </div>
+          <!-- end hashtags -->
+        </div>
+      </div>
+    </div>
+    <!-- end search-results-body -->
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end search-results content -->

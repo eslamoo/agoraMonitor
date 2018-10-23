@@ -1,0 +1,19 @@
+body {
+    .page-content {
+        padding-left: 100px;
+        transition: all 0.1s ease-in-out;
+        &.collapsed {
+            @media(max-width: 991px) {
+                padding-left: 0 !important;
+            }
+        }
+        .contaniner-fluid {
+            @media(max-width: 400px) {
+                padding:40px 15px !important;
+            }
+        }
+        .filters-area {
+            overflow: hidden !important;
+        }
+    }
+}

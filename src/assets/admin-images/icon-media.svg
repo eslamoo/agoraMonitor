@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="23px" viewBox="0 0 24 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="M-Analytics:-Overview" transform="translate(-30.000000, -2551.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="CONTENT" transform="translate(15.000000, 80.000000)">
+                <g id="Cards-and-Graphs" transform="translate(0.000000, 86.000000)">
+                    <g id="Cards-row-2" transform="translate(0.000000, 2364.000000)">
+                        <g id="Media">
+                            <g id="icon-media" transform="translate(15.000000, 21.000000)">
+                                <path d="M6.17475,0.0498 L5.17475,4.97455 L0.125,4.97455 L0.125,22.4248 L18.20025,22.4248 L18.20025,20.9502 L20.25005,21.375 L23.87505,3.67475 L6.17475,0.0498 Z M1.4745,6.34955 L16.8495,6.34955 L16.8495,14.50005 L13.074,10.27555 L7.824,16.3508 L5.2985,13.926 L1.49875,17.6505 L1.4997265,6.34975 L1.4745,6.34955 Z M19.2,19.7998 L18.1746,19.599605 L18.1746,5.000105 L6.49985,5.000105 L7.17465,1.650605 L22.2499,4.725855 L19.2,19.7998 Z" id="Shape"></path>
+                                <path d="M6.29975,9.6505 C6.29975,10.4923 5.617125,11.174925 4.775325,11.174925 C3.93255,11.174925 3.249925,10.4923 3.249925,9.6505 C3.249925,8.807725 3.93255,8.1251 4.775325,8.1251 C5.617125,8.1251 6.29975,8.807725 6.29975,9.6505" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

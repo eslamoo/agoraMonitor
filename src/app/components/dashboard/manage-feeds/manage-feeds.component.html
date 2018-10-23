@@ -1,0 +1,255 @@
+<!-- start manage-feeds content -->
+<div class="manage-feeds page-content collapsed">
+  <div class="contaniner-fluid">
+    <div class="manage-feeds-header">
+      <div class="row">
+        <div class="col-sm-6">
+          <label>Feeds:</label>
+          <h3>Manage feeds</h3>
+        </div>
+        <div class="col-sm-6 hidden-xs-down" style="text-align:right">
+          <a href="javascript:;" data-src="#AddNewFeedModal" data-fancybox class="agora-btn AddNewFeed">
+            <img src="../../../../assets/admin-images/icon-add.svg" alt="Agora Monitor"> Add new feed
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- end manage-feeds-header -->
+    <div class="manage-feeds-body">
+      <div class="row">
+        <div class="col-xl-3 col-md-4 col-sm-6" *ngFor="let feed of feeds">
+          <div class="manage-feeds-box">
+            <h5>{{feed.name}}</h5>
+            <div class="manage-feeds-box-body">
+              <div class="manage-feeds-box-body-group">
+                <h6>USERS:</h6>
+                <div class="tags">
+                  <label *ngFor="let user of feed.users">
+                    <span>{{user.follower_name}}</span>
+                    <img src="../../../../assets/admin-images/icon-close-modal.svg" alt="Agora Monitor">
+                  </label>
+                </div>
+              </div>
+              <div class="manage-feeds-box-body-group">
+                <h6>TAGS:</h6>
+                <div class="tags">
+                  <label *ngFor="let tag of feed.tags">
+                    <span>{{tag.tag_name}}</span>
+                    <img src="../../../../assets/admin-images/icon-close-modal.svg" alt="Agora Monitor">
+                  </label>
+                  
+                 
+                </div>
+              </div>
+              <div class="manage-feeds-box-actions">
+                <a class="agora-btn add-more" [attr.data-src]="'#add'+feed.id" data-fancybox>Add more</a>
+
+
+                <a href="javascript:;" [attr.data-src]="'#'+feed.id" data-fancybox class="agora-btn remove">Remove</a>
+              </div>
+              <!-- end manage-feeds-box-actions -->
+            </div>
+            <!-- end manage-feeds-box-body -->
+          </div>
+          <!-- end manage-feeds-box -->
+        </div>
+      </div>
+    </div>
+    <!-- end profile-followers-body -->
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end manage-feeds content -->
+
+<div id="AddNewFeedModal" style="display: none;">
+  <div class="new-feed-content">
+    <h5>Add new feed</h5>
+    <div class="new-feed-body">
+      <div class="new-feed-group">
+        <div *ngIf="addFeedError" class="alert alert-danger">
+          <label class="title alert-danger">
+            <strong>{{addFeedError}}</strong>
+          </label>
+        </div>
+        <div *ngIf="addFeedSuccess" class="alert alert-success">
+          <label class="title alert-success">
+<strong style="color:#59B478">{{addFeedSuccess}} added succesfully!</strong>
+
+          </label>
+        </div>
+      </div>
+      <div class="new-feed-group has-error">
+        <label class="title">Name:</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="name">
+      </div>
+      <div class="new-feed-group">
+        <label class="title">Search Users:</label>
+        <div class="tags-wrapper">
+          <div class="tags">
+            <label>
+              <span>johndoe</span>
+              <img src="../../../../assets/admin-images/icon-close-modal.svg" alt="Agora Monitor">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="new-feed-group">
+        <label class="title">Search Tags:</label>
+        <div class="tags-wrapper">
+          <div class="tags">
+            <label>
+              <span>johndoe</span>
+              <img src="../../../../assets/admin-images/icon-close-modal.svg" alt="Agora Monitor">
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="new-feed-group new-feed-actions">
+        <button class="agora-btn save" (click)="addFeed()">Save changes</button>
+        <button class="agora-btn remove" data-fancybox-close>Cancel</button>
+      </div>
+      <!-- end manage-feeds-box-actions -->
+    </div>
+    <!-- end new-feed-body -->
+  </div>
+  <!-- end modal-content -->
+</div>
+<!-- end #AddNewFeedModal -->
+
+<div id="{{feed.id}}" style="display: none;" class="removeModal" *ngFor="let feed of feeds">
+
+  <div class="confirm-content">
+    <h5>Confirmation title</h5>
+    <div class="confirm-body">
+      <div class="confirm-group">
+        <p>Are you sure you want to remove this feed?</p>
+      </div>
+ 
+      <div class="confirm-group confirm-actions">
+<button class="agora-btn remove" [attr.data-src]="'#re'+feed.id" (click)="removeFeed(feed.id)" *ngIf="!removeFeedSuccess">Yes, remove</button>
+
+        <button class="agora-btn cancel" data-fancybox-close>Cancel</button>
+      </div>
+      <!-- end manage-feeds-box-actions -->
+    </div>
+    <!-- end new-feed-body -->
+  </div>
+  <!-- end modal-content -->
+
+
+</div>
+<div id="re{{feed.id}}" style="display: none;" class="removeModal" *ngFor="let feed of feeds">
+
+  <div class="confirm-content">
+    <h5>Feed removed</h5>
+    <div class="confirm-body">
+      <div class="confirm-group">
+        <p>Your feed was successfully removed.</p>
+      </div>
+      <span *ngIf="removeFeedSuccess" class="text-success">{{removeFeedSuccess}}</span>
+      <span *ngIf="removeFeedError" class="text-danger">{{removeFeedError}}</span>
+      <div class="confirm-group confirm-actions">
+        <button class="agora-btn remove" (click)="removeFeed(feed.id)" *ngIf="!removeFeedSuccess">Yes, remove <i class="fa fa-spinner fa-spin" *ngIf="isRemoveLoading"></i></button>
+
+        <button class="agora-btn cancel" data-fancybox-close>Cancel</button>
+      </div>
+      <!-- end manage-feeds-box-actions -->
+    </div>
+    <!-- end new-feed-body -->
+  </div>
+  <!-- end modal-content -->
+
+
+</div>
+<div id="SuccessModal" style="display: none;">
+  <div class="confirm-content">
+    <h5>Feed removed</h5>
+    <div class="confirm-body">
+      <div class="confirm-group">
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+        <p *ngIf="removeFeedSuccess" class="text-success">{{removeFeedSuccess}}</p>
+      </div>
+    </div>
+    <!-- end new-feed-body -->
+  </div>
+  <!-- end modal-content -->
+</div>
+<!-- end #ConfirmModal -->
+<!-- end #ConfirmModal -->
+<div id="add{{feed.id}}" style="display: none;" class="addItems" *ngFor="let feed of feeds">
+  <div class="new-feed-content">
+    <h5>Add More</h5>
+    <div class="new-feed-body">
+      <form>
+      <div class="new-feed-group">
+        <label class="title">Search Users:</label>
+        <div class="tags-wrapper">
+          <mat-form-field class="demo-chip-list">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let user of users" [selectable]="selectable" [removable]="removable" (remove)="remove(user)">
+                {{user.text}}
+                <i matChipRemove *ngIf="removable" aria-hidden="true">
+                  <img src="../../../../assets/admin-images/icon-close-modal.svg" alt="Agora Monitor">
+                </i>
+              </mat-chip>
+              <input 
+                #myInput 
+                [formControl]="myControl" 
+                [matAutocomplete]="auto" 
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" 
+                [matChipInputAddOnBlur]="addOnBlur" />
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.text">
+                  <img src="{{option.image}}" alt="">{{ option.text }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="new-feed-group">
+        <label class="title">Search Tags:</label>
+        <div class="tags-wrapper">
+            <!-- <mat-form-field class="demo-chip-list">
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let hashtag of hashtags" [selectable]="selectable" [removable]="removable" (remove)="remove(user)">
+                  {{hashtag.text}}
+                  <i matChipRemove *ngIf="removable" aria-hidden="true">
+                    <img src="../../../../assets/admin-images/icon-close-modal.svg" alt="Agora Monitor">
+                  </i>
+                </mat-chip>
+                <input 
+                  #myInputTag
+                  [formControl]="myControlTag" 
+                  [matAutocomplete]="auto" 
+                  [matChipInputFor]="chipList" 
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  [matChipInputAddOnBlur]="addOnBlur" />
+                <mat-autocomplete 
+                  #auto="matAutocomplete" 
+                  (optionSelected)="optionTagSelected($event)">
+                  <mat-option 
+                    *ngFor="let option of filteredOptionsHashtags | async" 
+                    [value]="option.text">
+                    {{ option.text }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-chip-list>
+            </mat-form-field> -->
+        </div>
+      </div>
+
+      <div class="new-feed-group new-feed-actions">
+        <button class="agora-btn save" (click)="submitAdd(feed.id)">Save changes</button>
+        <button class="agora-btn remove" data-fancybox-close>Cancel</button>
+      </div>
+      <!-- end manage-feeds-box-actions -->
+      </form>
+    </div>
+    <!-- end new-feed-body -->
+  </div>
+  <!-- end modal-content -->
+</div>
+<!-- end #AddNewFeedModal -->

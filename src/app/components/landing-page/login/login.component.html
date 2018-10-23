@@ -1,0 +1,34 @@
+<!-- start login section -->
+<section class="login">
+  <div class="container">
+    <h1>Log in</h1>
+    <form class="login-form">
+      <div class="overlay"></div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="text" name="email" class="form-control" value="" [formControl]="email">
+        <span *ngIf="email.hasError('email') && email.touched && !email.errors.required">Please Enter a valid email</span>
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" name="password" class="form-control" value="" [formControl]="password">
+        <span *ngIf="password.hasError('required') && password.touched">Password field is required</span>
+        <span *ngIf="errorMsg">{{errorMsg}}</span>
+      </div>
+      <div class="forget-pass">
+        <a routerLink="/forget-password">Forgot your password?</a>
+      </div>
+      <div class="form-group remember-me form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input"> Remember Me
+        </label>
+      </div>
+      <div class="form-group submit">
+        <input (click)="login()" value="Log In" class="agora-btn colord">
+      </div>
+    </form>
+    <!-- end login-form -->
+  </div>
+  <!-- end container -->
+</section>
+<!-- end login section --> 

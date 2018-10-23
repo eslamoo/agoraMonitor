@@ -1,0 +1,239 @@
+<!-- start account-settings content -->
+<div class="account-settings page-content collapsed">
+  <div class="contaniner-fluid">
+    <div class="account-settings-header">
+      <div class="row">
+        <div class="col-sm-6">
+          <label>Settings:</label>
+          <h3>Account Settings</h3>
+        </div>
+      </div>
+    </div>
+    <!-- end account-settings-header -->
+    <div class="account-settings-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="account-settings-all-tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#General" role="tab">General</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Password" role="tab">Password</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Subscription" role="tab">Subscription</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#Payments" role="tab">Payments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#UpdateYourCard" role="tab">Update your card</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="General" role="tabpanel">
+                <form class="general-tab">
+                  <div class="general-settings-group">
+                    <h4>Email</h4>
+                    <label>Your email:</label>
+                    <input type="text" name="email" placeholder="" [(ngModel)]="email">
+                  </div>
+                  <!-- end general-settings-group -->
+                  <div class="general-settings-group">
+                    <h4>Timezone</h4>
+                    <label>Your timezone:</label>
+                    <select name="timezone" name="timezone" [(ngModel)]="timezone">
+                      <option  *ngFor="let zone of timeZoneList" value="{{zone.zone}}">{{zone.name}}</option>
+                    </select>
+                  </div>
+                  <!-- end general-settings-group -->
+                  <div class="general-settings-group last-group">
+                    <h4>Email digests</h4>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-12">
+                        <h5>My custom feed</h5>
+                        <input id="custom-feed" type="checkbox" name="">
+                        <label for="custom-feed">Receive email notifications:</label>
+                        <select name="email-notifications in-grid" value="3h" style="width:100%">
+                          <option value="3h" *ngFor="let digest of emailDigests | objectKeys" >{{emailDigests[digest]}}</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 col-sm-12">
+                        <h5>Another Feed</h5>
+                        <input id="another-feed" type="checkbox" name="">
+                        <label for="another-feed">Receive email notifications:</label>
+                        <select name="email-notifications in-grid" value="3h" style="width:100%">
+                          <option value="3h" *ngFor="let digest of emailDigests | objectKeys">{{emailDigests[digest]}}</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 col-sm-12">
+                        <h5>My favourites</h5>
+                        <input id="my-favourites" type="checkbox" name="">
+                        <label for="my-favourites">Receive email notifications:</label>
+                        <select name="email-notifications in-grid" value="3h" style="width:100%">
+                          <option value="3h" *ngFor="let digest of emailDigests | objectKeys">{{emailDigests[digest]}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end row -->
+                  </div>
+                      <div class="err-msgs" *ngIf="updateErrorMsgs">
+                        <span class="m-form__help text-danger d-block" *ngFor="let err of updateErrorMsgs | objectKeys">
+                          {{updateErrorMsgs[err][0]}}
+                        </span>
+                      </div>
+                      <span *ngIf="updateSuccessMsg" class="text-success">{{updateSuccessMsg}}</span>
+                  <!-- end general-settings-group -->
+                  <div class="general-settings-actions">
+                    <button class="agorio-btn save" (click)="updateUser()">Save changes</button>
+                    <button class="agorio-btn cancel">Cancel</button>
+                  </div>
+
+
+                  <!-- end general-tab -->
+                </form>
+                
+              </div>
+         
+              <!-- end General tab-pane -->
+              <div class="tab-pane fade" id="Password" role="tabpanel">
+                <form class="passord-tab">
+                  <div class="password-group">
+                    <label>Current password:</label>
+                    <input type="password" name="old_password" [(ngModel)]="user.old_password">
+                  </div>
+                  <div class="password-group">
+                    <label>New password:</label>
+                    <input type="password"  name="password" [(ngModel)]="user.password">
+                  </div>
+                  <div class="password-group">
+                    <label>Confirm new password:</label>
+                    <input type="password" name="password_confirmation" [(ngModel)]="user.password_confirmation">
+
+                  </div>
+                   <div class="form-group">
+                <div class="err-msgs" *ngIf="errorMsgs">
+                    <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsgs | objectKeys">
+                        {{errorMsgs[err][0]}} 
+                    </span>
+                </div>
+                <span *ngIf="successMsg" class="text-success">{{sunccessMsg}}</span>
+                <span *ngIf="wrongPass" class="text-danger">{{wrongPass}}</span>
+            </div>
+                  <div class="password-settings-actions">
+                    <button (click)="changePass()" class="agorio-btn save">Save changes</button>
+                    <button class="agorio-btn cancel">Cancel</button>
+                  </div>
+                </form>
+              </div>
+              <!-- end Password tab-pane -->
+              <div class="tab-pane fade" id="Subscription" role="tabpanel">
+                <form class="subscription-tab">
+                  <div class="subscription-settings-group">
+                    <h4>Your current plan is – {{planName}} (${{planAmount}}/month)</h4>
+                    <label for="my-favourites">Upgrade to another plan:</label>
+                    <form>
+                      <select class="plan in-grid" name="plan" [(ngModel)]="plan">
+                        <option value="{{plan.plan_code}}" *ngFor="let plan of plans">{{plan.name}}</option>
+                      </select>
+                      <button class="agorio-btn upgrade" (click)="upPlan()">Upgrade</button>
+                    </form>
+                        <div class="err-msgs" *ngIf="errorMsgsPlan">
+                          <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsgsPlan | objectKeys">
+                            {{errorMsgsPlan[err][0]}}
+                          </span>
+                      </div>
+                  </div>
+                  <div class="subscription-settings-group last-group">
+                    <h4>Cancel subscription</h4>
+                    <button class="agorio-btn cancel">Cancel my subscription</button>
+                  </div>
+                </form>
+                <!-- end subscription-tab -->
+              </div>
+              <!-- end Subscription tab-pane -->
+              <div class="tab-pane fade" id="Payments" role="tabpanel">
+                <div class="payments-tab">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <td>Date</td>
+                        <td>Payment</td>
+                        <td class="mobile-v">Status</td>
+                        <td class="mobile-v">Invoice</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let invoice of invoices">
+                        <td>{{invoice.date}}</td>
+                        <td>{{invoice.total}}</td>
+                        <td class="mobile-v">Paid</td>
+                        <td class="mobile-v">
+                          <a href="{{invoice.download}}" class="agorio-btn download-invoice">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            Download
+                          </a>
+                        </td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- end table -->
+                </div>
+                <!-- end payments-tab -->
+              </div>
+              <!-- end Payments tab-pane -->
+              <div class="tab-pane fade" id="UpdateYourCard" role="tabpanel">
+                <form class="UpdateYourCard-tab">
+                  <div class="update-card-group">
+                    <label>Card holder’s name:</label>
+                    <input type="text" name="">
+                  </div>
+                  <div class="update-card-group">
+                    <label>Card number:</label>
+                    <div class="card-number">
+                      <input type="tel" name="" maxlength="4">
+                      <input type="tel" name="" maxlength="4">
+                      <input type="tel" name="" maxlength="4">
+                      <input type="tel" name="" maxlength="4">
+                    </div>
+                  </div>
+                  <div class="update-card-group">
+                    <label>Card expiry date:</label>
+                    <label class="cvc">CVC:</label>
+                    <div class="card-number">
+                      <select name="email-notifications in-grid" value="Jan">
+                        <option value="Jan">January</option>
+                      </select>
+                      <select name="email-notifications in-grid" value="2018">
+                        <option value="2018">2018</option>
+                      </select>
+                      <input type="tel" name="" maxlength="4" style="width:10%">
+                    </div>
+                  </div>
+                  <div class="update-card-group">
+                    <p>
+                      * Your credit card details are sent to
+                      <b>Stripe</b> for processing the transaction, and never touch our servers.
+                    </p>
+                    <button class="agorio-btn submit">Submit</button>
+                  </div>
+                </form>
+                <!-- end UpdateYourCard-tab -->
+              </div>
+              <!-- end UpdateYourCard tab-pane -->
+            </div>
+            <!-- end tab-content -->
+          </div>
+          <!-- end account-settings-all-tabs -->
+        </div>
+      </div>
+    </div>
+    <!-- end profile-followers-body -->
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end account-settings content -->

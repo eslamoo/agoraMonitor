@@ -1,0 +1,50 @@
+<!-- start navbar -->
+<nav class="navbar navbar-toggleable-md" style="margin-bottom:100px" *ngIf="!inDashboard">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-6">
+        <div class="logo">
+          <a routerLink=""><img src="../../../../assets/images/logo.png" alt="Agora Monitor"></a>
+         
+        </div>
+      </div>
+      <div class="hidden-lg-up col-6">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a routerLink=""> <img class="navbar-toggler-icon" src="../../../../assets/images/icon-nav-mobile.svg" alt="Agora Monitor"></a>
+        </button>
+      </div>
+      <div class="col-lg-5  col-xs-12 collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="list-unstyled nav-links navbar-nav">
+          <ul class="list-unstyled">
+            <li class="nav-item" routerLinkActive="active current">
+              <a class="nav-link" routerLink="">Features</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active current">
+              <a class="nav-link" routerLink="/pricing">Pricing</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active current">
+              <a class="nav-link" href="http://blog.agoramonitor.com" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active current">
+              <a class="nav-link" routerLink="/contact" >Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- end nav-links -->
+        <div class="nav-actions hidden-lg-up">
+          <a routerLink="/login" class="agora-btn">Log in</a>
+          <a routerLink="/register" class="agora-btn colord">Start Free 15 Day Trial</a>
+        </div>
+      </div>
+      <div class="col-md-4 hidden-md-down">
+        <div class="nav-actions">
+          <a routerLink="/register" class="agora-btn colord">Start Free 15 Day Trial</a>
+          <a routerLink="/login" class="agora-btn login">Log in</a>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+</nav>
+<!-- end navbar -->

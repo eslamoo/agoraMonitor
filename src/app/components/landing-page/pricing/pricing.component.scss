@@ -1,0 +1,332 @@
+$main-color:#59B478;
+$primary-color:#696969;
+$gray-color:#999999;
+$orange-color:#FFBD23;
+body {
+    font-family: 'Raleway', sans-serif;
+    color: $primary-color;
+}
+
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.no-decoration {
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.agora-btn {
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    color: $primary-color;
+    font-family: Raleway;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 30px;
+    border: none;
+    outline: none;
+    &:hover {
+        text-decoration: none;
+        color: $primary-color;
+    }
+}
+
+.colord {
+    background-color: $main-color;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+
+@media(max-width:768px) {
+    .w-202 {
+        width: 202px
+    }
+    .po-ab {
+        position: absolute;
+        right: 44px
+    }
+}
+
+@media(min-width:500px) {
+    .w-202 {
+        width: 202px
+    }
+    .po-ab {
+        position: absolute;
+        right: 44px
+    }
+}
+
+footer {
+    background: #eaeaea !important;
+}
+
+
+/* start plans section */
+
+.plans {
+    background-color: #EAEAEA;
+    padding: 40px 0;
+    margin-top: 50px;
+    text-align: center;
+    h2 {
+        font-size: 34px;
+        font-weight: 300;
+        @media(max-width: 768px) {
+            font-size: 30px;
+        }
+    }
+    h3 {
+        font-size: 22px;
+        font-weight: 600;
+        @media(max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+    .plans-content {
+        margin: 60px 0;
+        #accordion {
+            .card {
+                margin-bottom: 25px;
+                &:nth-child(2) {
+                    .card-header,
+                    .card-block .buyIt a {
+                        background-color: $main-color;
+                    }
+                }
+                &:nth-child(3) {
+                    .card-header,
+                    .card-block .buyIt a {
+                        background-color: $orange-color;
+                    }
+                }
+                .card-header {
+                    background-color: $gray-color;
+                    color: #fff;
+                    padding: 0;
+                    .title {
+                        position: relative;
+                        text-align: left;
+                        padding: .75rem 1.25rem;
+                        h4 {
+                            margin-bottom: 2px;
+                            font-weight: 600;
+                        }
+                        .agora-btn {
+                            position: absolute;
+                            right: 20px;
+                            top: 20px;
+                            padding: 8px 25px;
+                        }
+                    }
+                    h5 {
+                        padding: .55rem 1.25rem;
+                        text-align: right;
+                        background-color: rgba(0, 0, 0, 0.2);
+                        span {
+                            float: left;
+                            font-size: 15px;
+                        }
+                        a {
+                            color: #fff;
+                            font-size: 15px;
+                            &[aria-controls="collapseOne"] {
+                                i {
+                                    transform: rotate(0);
+                                }
+                            }
+                            &.collapsed {
+                                i {
+                                    transform: rotate(180deg) !important;
+                                }
+                            }
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                text-decoration: none;
+                            }
+                            i {
+                                transition: all 0.25s ease;
+                                margin-left: 5px;
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                .card-block {
+                    text-align: left;
+                    h5 {
+                        color: $main-color;
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin: 20px 0 15px;
+                    }
+                    p {
+                        font-size: 13px;
+                        font-weight: 500;
+                        color: #666;
+                        margin-bottom: 8px;
+                        padding-bottom: 8px;
+                        border-bottom: 1px solid #eee;
+                        img {
+                            float: right;
+                            margin: 0 5px;
+                        }
+                    }
+                    .buyIt {
+                        text-align: center;
+                        padding: 45px 0;
+                        a {
+                            color: #fff;
+                            background-color: $gray-color;
+                        }
+                    }
+                }
+            }
+        }
+        .plans-table {
+            table {
+                width: 100%;
+                text-align: center;
+                tr {
+                    td {
+                        background: #FFF;
+                        border-bottom: 1px solid #f5f0f0;
+                        &:not(:last-child) {
+                            border-right: 1px solid #f5f0f0;
+                        }
+                        &:first-child {
+                            background: transparent;
+                            border-bottom: 1px solid #e0e0e0;
+                            width: 33.3%;
+                            text-align: left;
+                        }
+                    }
+                }
+                thead {
+                    tr {
+                        &:first-child {
+                            td {
+                                &:nth-child(2) {
+                                    border-top-left-radius: 5px;
+                                }
+                                &:last-child {
+                                    border-top-right-radius: 5px;
+                                }
+                                color: #fff;
+                                padding:15px;
+                                border-bottom: 0;
+                                &:nth-child(2) {
+                                    background-color: $gray-color;
+                                }
+                                &:nth-child(3) {
+                                    background-color: $main-color;
+                                }
+                                &:nth-child(4) {
+                                    background-color: $orange-color;
+                                }
+                                h4 {
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                    margin-bottom: 0;
+                                }
+                                p {
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            font-size: 13px;
+                            font-weight: 600;
+                            td {
+                                color: #f5f5f5;
+                                padding: 6px;
+                                border-bottom: 0;
+                                &:nth-child(2) {
+                                    background-color: darken($gray-color, 15%);
+                                }
+                                &:nth-child(3) {
+                                    background-color: darken($main-color, 15%);
+                                }
+                                &:nth-child(4) {
+                                    background-color: darken($orange-color, 15%);
+                                }
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        &:last-child {
+                            td:first-child {
+                                border-bottom: 0;
+                            }
+                            td:not(:first-child) {
+                                box-shadow: 0 -1px 0 0 #F6F6F6, 0 1px 0 0 #E7E7E7;
+                                box-shadow: 0 2px 0px rgba(0, 0, 0, 0.08);
+                                background-color: lighten(#f7f7f7, 1%);
+                                p {
+                                    color: #696969;
+                                }
+                            }
+                        }
+                        &.actions {
+                            td:first-child {
+                                border-bottom: 0;
+                            }
+                        }
+                        td {
+                            padding: 10px;
+                            &:nth-child(2) {
+                                a {
+                                    background-color: $gray-color;
+                                }
+                            }
+                            &:nth-child(3) {
+                                a {
+                                    background-color: $main-color;
+                                }
+                            }
+                            &:nth-child(4) {
+                                a {
+                                    background-color: $orange-color;
+                                }
+                            }
+                            h5 {
+                                color: $main-color;
+                                font-size: 14px;
+                                font-weight: bold;
+                                margin: 20px 0 15px;
+                            }
+                            p {
+                                font-size: 13px;
+                                font-weight: 500;
+                                color: #666;
+                                margin-bottom: 0;
+                                img {
+                                    float: right;
+                                }
+                            }
+                            a {
+                                display: inline-block;
+                                color: #fff;
+                                margin: 35px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* end plans section */

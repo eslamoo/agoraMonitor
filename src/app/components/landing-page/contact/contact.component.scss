@@ -1,0 +1,119 @@
+    $main-color:#59B478;
+$primary-color:#696969;
+$gray-color:#999999;
+$orange-color:#FFBD23;
+body {
+    font-family: 'Raleway', sans-serif;
+    color: $primary-color;
+}
+
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.no-decoration {
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.agora-btn {
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    color: $primary-color;
+    font-family: Raleway;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 30px;
+    border: none;
+    outline: none;
+    &:hover {
+        text-decoration: none;
+        color: $primary-color;
+    }
+}
+
+.colord {
+    background-color: $main-color;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+
+
+/* start contant section */
+
+.contant {
+    margin-top: 50px;
+    padding: 80px 0;
+    background-color: #F6F6F6;
+    text-align: center;
+  
+
+        .container {
+            @media(max-width: 768px) {
+                padding-right:0;
+                padding-left: 0;
+            }
+        }
+        h1 {
+            font-weight: 300;
+            @media(max-width: 768px) {
+                font-weight: 500;
+                font-size: 1.8rem;
+            }
+        }
+        .contact-form {
+            margin: 40px auto;
+            padding: 60px 80px;
+            background-color: #fff;
+            width: 50%;
+            @media(max-width: 992px) {
+                width:80%;
+            }
+            @media(max-width:768px) {
+                width: 100%;
+                padding: 60px 40px 0;
+            }
+            border-radius: 3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+            text-align: left;
+            .form-group {
+                &.submit {
+                    text-align: center;
+                }
+                label {
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-bottom: 4px;
+                }
+                input,
+                textarea {
+                    border-radius: 2px;
+                    background-color: #FCFCFC;
+                    border: 1px solid #D5D5D5;
+                    &:focus {
+                        border-color: $main-color;
+                    }
+                }
+                textarea {
+                    height: 130px;
+                    max-height: 150px;
+                }
+                input[type='submit'] {
+                    background-color: $main-color;
+                    margin: 30px auto;
+                    padding: 10px 25px;
+                    @media(max-width: 768px) {
+                        padding: 8px 20px;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+    /* end contant section */

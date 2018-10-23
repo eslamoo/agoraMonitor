@@ -1,0 +1,138 @@
+<!-- start navbar desktop-nv -->
+<nav class="desktop-nv hidden-md-down">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-3 col-md-4 col-sm-3">
+        <div class="logo-menu">
+          <img class="logo" src="../../../../assets/admin-images/logo.png" alt="Agora Monitor">
+          <img class="menu collapse" src="../../../../assets/admin-images/Collapse.svg" alt="Agora Monitor">
+          <img class="menu expand" src="../../../../assets/admin-images/icon-nav-expand.svg" alt="Agora Monitor">
+        </div>
+        <!-- end logo -->
+      </div>
+      <div class="col-xl-7 col-md-5 col-sm-7 no-gutters no-padding">
+        <div class="searching-area">
+          <form style="display:inline">
+          <a style="cursor:pointer" [routerLink]="['/dashboard/results']" [queryParams]="{ q :  searchInput.value}">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+          
+            <input type="text" name="" #searchInput placeholder="Search..." (keyup.enter)="search(searchInput.value)">
+          </form>
+          <button>
+            <img class="i-icon" src="../../../../assets/admin-images/icon-info.svg" alt="Agora Monitor">
+            <b>
+              UPGRADE
+              <br>
+              <span>4 days of trial left</span>
+            </b>
+          </button>
+        </div>
+      </div>
+      <div class="col-xl-2 col-md-3 col-sm-2 no-padding">
+        <div class="profile-area">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="avatar">
+                <img src="../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+              </span>
+              <span class="text hidden-sm">@alexmansour</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <ul class="list-unstyled accounts">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <img src="../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+                    <span>@tom_hopkins</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <img src="../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+                    <span>@sarah_johnson</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <img src="../../../../assets/admin-images/bitmap.jpg" alt="Agora Monitor">
+                    <span>@tom_hopkins</span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="list-unstyled app-setting">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <img src="../../../../assets/admin-images/icon-account.svg" alt="Agora Monitor">
+                    <span class="menu-label">Manage Accounts</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [routerLink]="['/dashboard/account-settings']">
+                    <img src="../../../../assets/admin-images/icon-settings.svg" alt="Agora Monitor">
+                    <span class="menu-label">Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" data-fancybox data-src="#SupportModal" href="javascript;;">
+                    <img src="../../../../assets/admin-images/icon-support.svg" alt="Agora Monitor">
+                    <span class="menu-label">Support</span>
+                  </a>
+                    <div id="SupportModal" class="SupportModal" style="display: none;">
+                      <div class="support-content">
+                        <h5>Email us</h5>
+                        <div class="support-body">
+                          <div class="support-group">
+                            <label class="title">Email address:</label>
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="support-group">
+                            <label class="title">Subject:</label>
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="support-group">
+                            <label class="title">Search Users:</label>
+                            <textarea class="form-control" style="height:140px;max-height:160px;"></textarea>
+                          </div>
+                          <div class="support-group support-actions">
+                            <button class="agora-btn submit">Submit</button>
+                            <button class="agora-btn cancel" data-fancybox-close>Cancel</button>
+                          </div>
+                          <!-- end manage-feeds-box-actions -->
+                        </div>
+                        <!-- end new-feed-body -->
+                      </div>
+                      <!-- end modal-content -->
+                    </div>
+                </li>
+              </ul>
+              <!-- end app-setting -->
+              <ul class="list-unstyled app-privacy">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <img src="../../../../assets/admin-images/icon-pass.svg" alt="Agora Monitor">
+                    <span class="menu-label">Change password</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="logout()">
+                    <img src="../../../../assets/admin-images/icon-logout.svg" alt="Agora Monitor">
+                    <span class="menu-label" style="color:#de6868">Log out</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- end app-privacy -->
+            </div>
+            <!-- end dropdown-menu -->
+          </div>
+          <!-- end dropdown -->
+        </div>
+        <!-- end profile-area -->
+      </div>
+    </div>
+  </div>
+
+</nav>
+<!-- start navbar desktop-nv -->
+
+
+<!-- end #SupportModal -->

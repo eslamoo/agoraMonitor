@@ -1,0 +1,190 @@
+<!-- start analytics-competitors content -->
+<div class="analytics-competitors page-content collapsed">
+  <div class="contaniner-fluid">
+    <div class="analytics-competitors-header">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="v-mobile">
+            <label>Analytics: Competitors:</label>
+            <h3>Overview</h3>
+          </div>
+        </div>
+        <div class="col-md-6 col-12 text-right">
+          <button class="agora-btn add-competitor">
+            <img src="../../../../assets/admin-images/icon-add.svg" alt="Agora Monitor"> Add competitor
+          </button>
+          <button class="agora-btn manage-competitor">
+            <img src="../../../../assets/admin-images/icon-pencil.svg" alt="Agora Monitor"> Manage
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end analytics-competitors-header -->
+    <div class="analytics-competitors-stats">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="analytics-competitors-stats-box">
+            <h6 class="analytics-competitors-green-title">Total Followers</h6>
+            <div class="analytics-competitors-stats-box-body">
+              <div class="row" *ngIf="competitors">
+                <div class="col-4" *ngFor="let comp of competitors">
+                  <a [routerLink]="['/dashboard/analytics-competitor/',comp.id]" class="competitor-stat">
+                    <img src="{{comp.avatar}}" alt="Agora Monitor">
+                   
+                    <label>{{comp.followers.written_format}}</label>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end analytics-competitors-stats-box -->
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="analytics-competitors-stats-box">
+            <h6 class="analytics-competitors-green-title">Total Followings</h6>
+            <div class="analytics-competitors-stats-box-body">
+              <div class="row" *ngIf="competitors">
+                <div class="col-4" *ngFor="let comp of competitors">
+                  <a [routerLink]="['/dashboard/analytics-competitor/',comp.id]" class="competitor-stat">
+                    <img src="{{comp.avatar}}" alt="Agora Monitor">
+                  
+                    <label>{{comp.followings.written_format}}</label>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end analytics-competitors-stats-box -->
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="analytics-competitors-stats-box">
+            <h6 class="analytics-competitors-green-title">Total Media Posted</h6>
+            <div class="analytics-competitors-stats-box-body">
+              <div class="row" *ngIf="competitors">
+                <div class="col-4" *ngFor="let comp of competitors">
+                  <a [routerLink]="['/dashboard/analytics-competitor/',comp.id]" class="competitor-stat">
+                    <img src="{{comp.avatar}}" alt="Agora Monitor">
+                    
+                    <label>{{comp.media.written_format}}</label>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end analytics-competitors-stats-box -->
+        </div>
+      </div>
+    </div>
+    <!-- end analytics-competitors-stats -->
+    <div class="analytics-competitors-charts">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="chart-panel">
+            <div class="chart-panel-heading">
+              <h6>
+                <span>Followers Growth</span>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    05/09/17 - 06/09/17
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </h6>
+            </div>
+            <div class="chart-panel-body">
+               <!-- <template id="chart-template">
+                <div>
+                  <div class="charts" :id="id">
+                  </div>
+                </div>
+              </template>
+              <div id="Followers-Growth">
+                <chart id="Followers-Growth-Chart" :categories="dates" :chart-data="likes"></chart>
+              </div>  -->
+              <div [chart]="chart"></div>
+            </div> 
+            
+            <!-- end chart-panel-body -->
+          </div>
+          <!-- end chart-panel -->
+        </div>
+        <div class="col-sm-6">
+          <div class="chart-panel">
+            <div class="chart-panel-heading">
+              <h6>
+                <span>Followings Growth</span>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    05/09/17 - 06/09/17
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </h6>
+            </div>
+            <div class="chart-panel-body">
+              <!-- <template id="chart-template">
+                <div>
+                  <div class="charts" :id="id">
+                  </div>
+                </div>
+              </template>
+              <div id="Followings-Growth">
+<chart [options]="options" id="Followings-Growth-Chart" :categories="dates" :chart-data="likes" (selection)="onChartSelection($event)"></chart>
+
+
+              </div>  -->
+  
+              <div [chart]="chart"></div>
+            </div>
+            <!-- end chart-panel-body -->
+          </div>
+          <!-- end chart-panel -->
+        </div>
+        <div class="col-sm-6">
+          <div class="chart-panel">
+            <div class="chart-panel-heading">
+              <h6>
+                <span>Gained & lost followers</span>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    05/09/17 - 06/09/17
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </h6>
+            </div>
+            <!-- <div class="chart-panel-body">
+              <template id="chart-template">
+                <div>
+                  <div class="charts" :id="id">
+                  </div>
+                </div>
+              </template> 
+              <div id="Gained-lost-followers">
+                <chart-with-multiple-lines id="Gained-lost-followers-chart" :categories="dates" :chart-data="gainedAndLostFollowers"></chart-with-multiple-lines> 
+              </div>
+            </div> -->
+            <div [chart]="chart"></div>
+            <!-- end chart-panel-body -->
+          </div>
+          <!-- end chart-panel -->
+        </div>
+      </div>
+    </div>
+    <!-- end analytics-competitors-charts -->
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end analytics-competitors content -->

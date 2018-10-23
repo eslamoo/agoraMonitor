@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="M-User-dropdown" transform="translate(-20.000000, -367.000000)" fill-rule="nonzero" fill="#DE6868">
+            <g id="User-Dropdown" transform="translate(0.000000, 50.000000)">
+                <g id="Links" transform="translate(20.000000, 172.000000)">
+                    <g id="icon-logout" transform="translate(0.000000, 145.000000)">
+                        <polygon id="Shape" points="6.4970396 9.59567327 10.4433762 6.30693069 6.4970396 3.01818812 7.49205446 1.8240802 12.8713515 6.30689208 7.49205446 10.7891891 7.49205446 10.7896919"></polygon>
+                        <polygon id="Shape" points="3.10867327 7.08422772 3.10867327 5.52963366 11.6575248 5.52963366 11.6575248 7.08422772"></polygon>
+                        <polygon id="Shape" points="0 12.5244059 0 0.0895841584 5.44017822 0.0895841584 5.44017822 1.64366337 1.55459406 1.64366337 1.55459406 10.9698119 5.44017822 10.9698119 5.44017822 12.5244059"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,47 @@
+<section class="contact">
+  <div class="container">
+    <h1>Register</h1>
+    <form class="contact-form">
+      <div class="overlay"></div>
+      <div class="form-group">
+        <label>First name:</label>
+        <input type="text" name="first_name" class="form-control" [(ngModel)]="user.first_name">
+      </div>
+      <div class="form-group">
+        <label>Last name:</label>
+        <input type="text" name="last_name" class="form-control" [(ngModel)]="user.last_name">
+      </div>
+     
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="text" name="email" class="form-control" [(ngModel)]="user.email">
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="user.password">
+      </div>
+      <div class="form-group">
+        <label>Confirm password:</label>
+        <input type="password" name="password_confirmation" class="form-control" [(ngModel)]="user.password_confirmation">
+      </div>
+      <div class="form-group">
+        <input type="checkbox" name="terms" class="" [(ngModel)]="user.terms">
+        <label style="float:right">Agree to our <a href="../terms" class="termss" target="_blank" >Terms</a> and confirm that you have read our <a href="../privacy" target="_blank" class="termss">Privacy</a>.</label>
+      </div>
+      <div class="form-group">
+        <div class="err-msgs" *ngIf="errorMsgs">
+          <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsgs | objectKeys">
+            {{errorMsgs[err][0]}}
+          </span>
+        </div>
+      </div>
+    <span *ngIf="successMsg" class="text-success">{{successMsg}}</span>
+    <span *ngIf="mustLogout" class="text-danger">{{mustLogout}}</span>
+      <div class="form-group submit">
+        <input type="submit" value="Register" (click)="register()" class="agora-btn colord">
+      </div>
+    </form>
+    <!-- end contact-form -->
+  </div>
+  <!-- end container -->
+</section>

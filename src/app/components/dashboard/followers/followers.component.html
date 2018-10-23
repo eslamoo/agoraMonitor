@@ -1,0 +1,29 @@
+<!-- start profile-followers content -->
+<div class="profile-followers page-content collapsed">
+  <div class="contaniner-fluid">
+    <div class="profile-followers-header">
+      <div class="row">
+        <div class="col-sm-6">
+          <label>Profile:</label>
+          <h3>Followers</h3>
+        </div>
+      </div>
+    </div>
+    <!-- end profile-followers-header -->
+    <div class="profile-followers-body">
+      <div class="row" *ngIf="followers">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let follower of followers">
+          <div class="profile-followers-box" id="{{follower.id}}">
+            <img src="{{follower.profile_picture}}" alt="Agora Monitor">
+            <h6>{{follower.full_name}}</h6>
+            <label>@{{follower.username}}</label>
+            <button class="agorio-btn">Add to my feed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end profile-followers-body -->
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end profile-followers content -->

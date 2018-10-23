@@ -1,0 +1,25 @@
+<section class="login">
+  <div class="container">
+    <h1>Reset your password</h1>
+    <form class="login-form">
+      <div class="overlay"></div>
+      <div class="form-group">
+        <label>Your Email:</label>
+        <input type="text" name="email" class="form-control" [formControl]="email">
+        <span *ngIf="email.hasError('email') && email.touched && !email.errors.required">Please Enter a valid email</span>
+      </div>
+      <span *ngIf="successMsg" class="text-success">{{successMsg}}</span>
+      <span *ngIf="error1" class="text-danger">{{error1}}</span>
+      <span *ngIf="errorMsg" class="text-danger">{{errorMsg}}</span>
+      
+        
+   
+      <div class="form-group submit">
+
+       <input type="submit" (click)="sendPassword()" value="Send password reset link" class="agora-btn colord">
+      </div>
+    </form>
+    <!-- end login-form -->
+  </div>
+  <!-- end container -->
+</section>

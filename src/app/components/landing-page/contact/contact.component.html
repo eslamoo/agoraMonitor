@@ -1,0 +1,38 @@
+<section class="contant">
+  <div class="container">
+    <h1>Contact</h1>
+    <form class="contact-form">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" [formControl]="name">
+      </div>
+      <div class="form-group">
+        <label>Email address:</label>
+        <input type="text" name="email" class="form-control" [formControl]="email">
+        <span *ngIf="email.hasError('email') && email.touched && !email.errors.required">Please Enter a valid email</span>
+      </div>
+      <div class="form-group">
+        <label>Subject:</label>
+        <input type="text" name="subject" class="form-control" [formControl]="subject" maxlength="150">
+      </div>
+      <div class="form-group">
+        <label>Message:</label>
+        <textarea class="form-control" [formControl]="message" maxlength="2048"></textarea>
+      </div>
+        <div class="form-group">
+          <div class="err-msgs" *ngIf="errorMsgs">
+            <span class="m-form__help text-danger d-block" *ngFor="let err of errorMsgs | objectKeys">
+              {{errorMsgs[err][0]}}
+            </span>
+          </div>
+        </div>
+      
+      <span *ngIf="successMsg" class="text-success">{{successMsg}}</span>
+      <div class="form-group submit">
+        <input type="submit" (click)="sendMsg()" value="Submit" class="agora-btn colord">
+      </div>
+    </form>
+    <!-- end contact-form -->
+  </div>
+  <!-- end container -->
+</section>

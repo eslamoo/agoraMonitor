@@ -1,0 +1,93 @@
+/* start nav section */
+
+@import "../../../../styles.scss";
+nav {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 21px 0 8px 0 !important;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.07);
+    z-index: 10;
+    .container-fluid {
+        @media(max-width: 768px) {
+            padding-right:0;
+            padding-left: 0;
+        }
+    }
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+        .navbar-toggler {
+            cursor: pointer;
+            border-left: 1px solid #EEE;
+            border-radius: 0;
+            outline: none;
+        }
+    }
+    .row,
+    .container-fluid {
+        width: 100%;
+    }
+    .logo,
+    .nav-links,
+    .nav-actions {
+        margin: 8px 0;
+    }
+    .logo {
+        @media(max-width: 1200px) {
+            text-align: left;
+        }
+    }
+    .navbar-collapse {
+        justify-content: center;
+        .nav-actions {
+            text-align: center;
+            a {
+                display: block;
+                margin: 15px auto;
+                width: 300px;
+                @media(max-width: 500px) {
+                    width:auto;
+                }
+            }
+        }
+    }
+    .nav-links {
+        ul {
+            margin-bottom: 0;
+            li {
+                display: inline-block;
+                @media(max-width: 992px) {
+                    display: block;
+                    margin: 10px 0;
+                }
+                &.active {
+                    a {
+                        color: $main-color;
+                    }
+                }
+                a {
+                    color: $primary-color;
+                    font-weight: 600;
+                    padding: 0 18px;
+                    @extend .no-decoration;
+                }
+            }
+        }
+    }
+    .nav-actions {
+        a {
+            margin: 0 5px;
+            &.login {
+                @media(max-width: 1200px)and(min-width:992px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+/* end nav section */
